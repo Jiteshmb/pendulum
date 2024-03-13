@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Pendulum</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #pendulum {
+            width: 20px;
+            height: 200px;
+            position: relative;
+            transform-origin: 50% 0%; 
+            animation: swing 2s infinite ease-in-out;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        .stick {
+            width: 4px;
+            height: 100%;
+            background-color: #30b10c;
+            position: relative;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .ball {
+            width: 50px;
+            height: 50px;
+            background-color: #30b10c;
+            border-radius: 50%;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        @keyframes swing {
+            0%{
+                transform: rotate(60deg);
+            }
+           
+            50% {
+                transform: rotate(-60deg);
+            }
+            100% {
+                transform: rotate(60deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="pendulum">
+        <div class="stick"></div>
+        <div class="ball"></div>
+    </div>
+</body>
+</html>
